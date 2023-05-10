@@ -1,2 +1,3 @@
-# homebrew-tap
-Homebrew Formulae to SauceLabs products
+```
+brew install saucelabs/tap/forwarder
+```
