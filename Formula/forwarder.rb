@@ -10,7 +10,7 @@ class Forwarder < Formula
 
   on_macos do
     url "https://github.com/saucelabs/forwarder/releases/download/v1.0.1/forwarder-1.0.1_darwin.all.zip"
-    sha256 "2726e412862a63c68958f02a2d6f00189fca8338f119d3fb43223644069cbc0b"
+    sha256 "333ad234c1bb7de91c95e0426217b13c50225194a1bd91858bc1f78778b647bf"
 
     def install
       bin.install "forwarder"
@@ -23,7 +23,7 @@ class Forwarder < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/saucelabs/forwarder/releases/download/v1.0.1/forwarder-1.0.1_linux.aarch64.tar.gz"
-      sha256 "7e306cb4ba682d44edbf3428c4562083a26236fbc73e2e950d52843dccda185b"
+      sha256 "b2fd3d61518ac88ed639aecf615980f36cf68816f4f297980d89eec378f6e6ad"
 
       def install
         bin.install "forwarder"
@@ -34,7 +34,7 @@ class Forwarder < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/saucelabs/forwarder/releases/download/v1.0.1/forwarder-1.0.1_linux.x86_64.tar.gz"
-      sha256 "c95d49cb15cdf534e68fdead5e62040dbb146b1be626804dcdb94a572aba737b"
+      sha256 "e75b7312caee09872708f18d63a235db0d871fa537537e167e7d6365b613e2de"
 
       def install
         bin.install "forwarder"
