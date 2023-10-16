@@ -5,12 +5,12 @@
 class SauceConnect < Formula
   desc "Sauce Connect Proxy"
   homepage "https://docs.saucelabs.com/secure-connections/sauce-connect-5/"
-  version "5.0.0-alpha10"
+  version "5.0.0-alpha11"
   license "Proprietary"
 
   on_macos do
-    url "https://saucelabs.com/downloads/sauce-connect/5.0.0-alpha10/sauce-connect-5.0.0-alpha10_darwin.all.zip"
-    sha256 "7fe6e3cfa5deb7d12eb10a3885fa915f0f46dd3ef761a8bde9d461a845183b3d"
+    url "https://saucelabs.com/downloads/sauce-connect/5.0.0-alpha11/sauce-connect-5.0.0-alpha11_darwin.all.zip"
+    sha256 "a163dce269cddd4d3a7503eced5a4f37c1deb1baef65c1abd51918151835b66f"
 
     def install
       bin.install "sc"
@@ -22,8 +22,8 @@ class SauceConnect < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://saucelabs.com/downloads/sauce-connect/5.0.0-alpha10/sauce-connect-5.0.0-alpha10_linux.aarch64.tar.gz"
-      sha256 "6e1cd0071abda2317d15661a1cc615873936c2294611438148b103d594176100"
+      url "https://saucelabs.com/downloads/sauce-connect/5.0.0-alpha11/sauce-connect-5.0.0-alpha11_linux.aarch64.tar.gz"
+      sha256 "bda6e9c59b19c3a7756a3026d2484cc81da1642188e7f9298c501f5378c51610"
 
       def install
         bin.install "sc"
@@ -33,8 +33,8 @@ class SauceConnect < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://saucelabs.com/downloads/sauce-connect/5.0.0-alpha10/sauce-connect-5.0.0-alpha10_linux.x86_64.tar.gz"
-      sha256 "da8817c7d982dee5f167f9be11d4c92455db1c413cca0cfe830c8800a46a4dc1"
+      url "https://saucelabs.com/downloads/sauce-connect/5.0.0-alpha11/sauce-connect-5.0.0-alpha11_linux.x86_64.tar.gz"
+      sha256 "0ef9b7bdee598852591489cdff5c53d5bf89ce6f19a9de5d2f3550d901c90488"
 
       def install
         bin.install "sc"
