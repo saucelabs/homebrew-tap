@@ -5,12 +5,12 @@
 class Forwarder < Formula
   desc "Forward MITM proxy with PAC support"
   homepage "https://forwarder-proxy.io"
-  version "1.3.0"
+  version "1.3.1"
   license "MPL-2.0"
 
   on_macos do
-    url "https://github.com/saucelabs/forwarder/releases/download/v1.3.0/forwarder-1.3.0_darwin.all.zip"
-    sha256 "3cf3b520d00801dbd09e1ceebbadb523ea0b16bdee7faa1d56fa66dca3e2267a"
+    url "https://github.com/saucelabs/forwarder/releases/download/v1.3.1/forwarder-1.3.1_darwin.all.zip"
+    sha256 "302b0d5965222443ba133ec359c2daf92e50c9e7a39ed161f1f0bf5ecd6bd1c2"
 
     def install
       bin.install "forwarder"
@@ -23,8 +23,8 @@ class Forwarder < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/saucelabs/forwarder/releases/download/v1.3.0/forwarder-1.3.0_linux.x86_64.tar.gz"
-        sha256 "cda551ab75f5c341b6c6c2963c79c930cde626b6131d06c2c6ee55f1ab61bacf"
+        url "https://github.com/saucelabs/forwarder/releases/download/v1.3.1/forwarder-1.3.1_linux.x86_64.tar.gz"
+        sha256 "7586573d446f911e416c044108e1d4a59dad90a7ba5f17abba324acb2878bf5b"
 
         def install
           bin.install "forwarder"
@@ -36,8 +36,8 @@ class Forwarder < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/saucelabs/forwarder/releases/download/v1.3.0/forwarder-1.3.0_linux.aarch64.tar.gz"
-        sha256 "0b6f27d5b3042c3caca93080a590779452838b4bb4544e4387b111c3f025eb5e"
+        url "https://github.com/saucelabs/forwarder/releases/download/v1.3.1/forwarder-1.3.1_linux.aarch64.tar.gz"
+        sha256 "b10b23bfa2fd43a827048edc2d1b0912e871b7bd56291c9c8b887f9351e8a6a8"
 
         def install
           bin.install "forwarder"
