@@ -5,12 +5,12 @@
 class SauceConnect < Formula
   desc "Sauce Connect Proxy"
   homepage "https://docs.saucelabs.com/secure-connections/sauce-connect-5/"
-  version "5.1.3"
+  version "5.2.0"
   license "Proprietary"
 
   on_macos do
-    url "https://saucelabs.com/downloads/sauce-connect/5.1.3/sauce-connect-5.1.3_darwin.all.zip"
-    sha256 "333534c38047a083324f78f7897e17094fb9948cee2cdd614c57f2f28a2f2c0a"
+    url "https://saucelabs.com/downloads/sauce-connect/5.2.0/sauce-connect-5.2.0_darwin.all.zip"
+    sha256 "f6d885f76f615f46538cadad740e4e5385d401eaeac97435462eac090f127839"
 
     def install
       bin.install "sc"
@@ -21,26 +21,30 @@ class SauceConnect < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://saucelabs.com/downloads/sauce-connect/5.1.3/sauce-connect-5.1.3_linux.aarch64.tar.gz"
-      sha256 "f3e52069e5caff8346109d2e63d92183bf44d4ea1d399e21fd07753db8545121"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://saucelabs.com/downloads/sauce-connect/5.2.0/sauce-connect-5.2.0_linux.x86_64.tar.gz"
+        sha256 "fb6d9e27b0d035afdad975a69b3e1f0aefbe462064b65f1e927d1269c09d7492"
 
-      def install
-        bin.install "sc"
-        bash_completion.install "completions/sc.bash" => "sc"
-        zsh_completion.install "completions/sc.zsh" => "_sc"
-        fish_completion.install "completions/sc.fish"
+        def install
+          bin.install "sc"
+          bash_completion.install "completions/sc.bash" => "sc"
+          zsh_completion.install "completions/sc.zsh" => "_sc"
+          fish_completion.install "completions/sc.fish"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://saucelabs.com/downloads/sauce-connect/5.1.3/sauce-connect-5.1.3_linux.x86_64.tar.gz"
-      sha256 "22d2d5827021586344ebb4576dd0358c20ad78ac73fa555db65d61519ba448cf"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://saucelabs.com/downloads/sauce-connect/5.2.0/sauce-connect-5.2.0_linux.aarch64.tar.gz"
+        sha256 "900e28d16d065adf0a2da2c113f754f7d58031aaf364737c1b5ca1968c396390"
 
-      def install
-        bin.install "sc"
-        bash_completion.install "completions/sc.bash" => "sc"
-        zsh_completion.install "completions/sc.zsh" => "_sc"
-        fish_completion.install "completions/sc.fish"
+        def install
+          bin.install "sc"
+          bash_completion.install "completions/sc.bash" => "sc"
+          zsh_completion.install "completions/sc.zsh" => "_sc"
+          fish_completion.install "completions/sc.fish"
+        end
       end
     end
   end
