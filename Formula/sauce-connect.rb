@@ -10,7 +10,7 @@ class SauceConnect < Formula
 
   on_macos do
     url "https://saucelabs.com/downloads/sauce-connect/5.5.0/sauce-connect-5.5.0_darwin.all.zip"
-    sha256 "7fc8237c3455704592188c4946083a13878d99b327362140df41a4e937e0e26f"
+    sha256 "2bb83c08a28be4f60307c6b9806a09d4eafe90ec0bcedf61af2da41541ce13a0"
 
     def install
       bin.install "sc"
@@ -24,7 +24,7 @@ class SauceConnect < Formula
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
         url "https://saucelabs.com/downloads/sauce-connect/5.5.0/sauce-connect-5.5.0_linux.x86_64.tar.gz"
-        sha256 "a986a49374636ecafca5aa6517157fb187c1b93b90f719cc0668c5406534cd48"
+        sha256 "70fac17a4eae223c82f65420ece62bc62013c9d63aec3f62c52560c35366eb20"
 
         def install
           bin.install "sc"
@@ -37,7 +37,7 @@ class SauceConnect < Formula
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
         url "https://saucelabs.com/downloads/sauce-connect/5.5.0/sauce-connect-5.5.0_linux.aarch64.tar.gz"
-        sha256 "21267e27fadd5a9ed58cb2d92469e886616beea41a61bda57300d95e103552d3"
+        sha256 "5699427d865a0b6ff20eb59e3a50ad53353aca9c00fc4f4a762299c6613bb201"
 
         def install
           bin.install "sc"
