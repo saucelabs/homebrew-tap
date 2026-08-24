@@ -5,14 +5,14 @@
 class Forwarder < Formula
   desc "Forward MITM proxy with PAC support"
   homepage "https://opensource.saucelabs.com/forwarder/"
-  version "1.6.1"
+  version "1.6.2"
   license "MPL-2.0"
 
   on_macos do
-    url "https://github.com/saucelabs/forwarder/releases/download/v1.6.1/forwarder-1.6.1_darwin.all.zip"
-    sha256 "e45075ad5d5dce2d9ed1b1d8c5741a0843e4cf7861bcb5154dcc23da2a3cdd95"
+    url "https://github.com/saucelabs/forwarder/releases/download/v1.6.2/forwarder-1.6.2_darwin.all.zip"
+    sha256 "1e333f098a2edafa91b54589746feb0dcfaf8a5f6845e733c6022d11ed01191b"
 
-    def install
+    define_method(:install) do
       bin.install "forwarder"
       bash_completion.install "completions/forwarder.bash" => "forwarder"
       zsh_completion.install "completions/forwarder.zsh" => "_forwarder"
@@ -21,30 +21,24 @@ class Forwarder < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/saucelabs/forwarder/releases/download/v1.6.1/forwarder-1.6.1_linux.x86_64.tar.gz"
-        sha256 "78123836f7ca816dad7841a71801cd7b9245da708e1ff426d197387e81ab99b2"
-
-        def install
-          bin.install "forwarder"
-          bash_completion.install "completions/forwarder.bash" => "forwarder"
-          zsh_completion.install "completions/forwarder.zsh" => "_forwarder"
-          fish_completion.install "completions/forwarder.fish"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/saucelabs/forwarder/releases/download/v1.6.2/forwarder-1.6.2_linux.x86_64.tar.gz"
+      sha256 "6291c67b6009c98f702833fc5addfc6f04dad0f4ffa0d64e0654e160f275fa53"
+      define_method(:install) do
+        bin.install "forwarder"
+        bash_completion.install "completions/forwarder.bash" => "forwarder"
+        zsh_completion.install "completions/forwarder.zsh" => "_forwarder"
+        fish_completion.install "completions/forwarder.fish"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/saucelabs/forwarder/releases/download/v1.6.1/forwarder-1.6.1_linux.aarch64.tar.gz"
-        sha256 "6170e284ab6b648f0e4e43fcce23149a6f4fb1e6dd80c74a3bd80c9730979f68"
-
-        def install
-          bin.install "forwarder"
-          bash_completion.install "completions/forwarder.bash" => "forwarder"
-          zsh_completion.install "completions/forwarder.zsh" => "_forwarder"
-          fish_completion.install "completions/forwarder.fish"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/saucelabs/forwarder/releases/download/v1.6.2/forwarder-1.6.2_linux.aarch64.tar.gz"
+      sha256 "8fd15081689618cb64af84a970fd6f5ae249cff0f413918b52fe439db579fc66"
+      define_method(:install) do
+        bin.install "forwarder"
+        bash_completion.install "completions/forwarder.bash" => "forwarder"
+        zsh_completion.install "completions/forwarder.zsh" => "_forwarder"
+        fish_completion.install "completions/forwarder.fish"
       end
     end
   end
